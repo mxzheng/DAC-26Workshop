@@ -1,0 +1,88 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Scientific Workshop on Advanced Research Topics" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <slot />
+    <script>
+      // Intersection Observer to animate elements when they come into view
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+          element.style.opacity = '0';
+          observer.observe(element);
+        });
+      });
+
+      // Highlight active nav item based on scroll position
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        let currentSection = '';
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollY >= sectionTop - 100 && scrollY < sectionTop + sectionHeight - 100) {
+            currentSection = section.getAttribute('id') || '';
+          }
+        });
+
+        navItems.forEach((item) => {
+          item.classList.remove('text-primary-600', 'font-medium');
+          item.classList.add('text-gray-600');
+          const href = item.getAttribute('href')?.substring(1);
+          if (href === currentSection) {
+            item.classList.add('text-primary-600', 'font-medium');
+            item.classList.remove('text-gray-600');
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      document.getElementById('menu-toggle')?.addEventListener('click', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu?.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll('#mobile-menu a').forEach((link) => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobile-menu')?.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

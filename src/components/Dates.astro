@@ -1,0 +1,54 @@
+---
+const importantDates = [
+  { date: "March 15, 2025", event: "Paper Submission Deadline" },
+  { date: "April 30, 2025", event: "Notification of Acceptance" },
+  { date: "May 31, 2025", event: "Camera-Ready Paper Submission" },
+  { date: "June 15, 2025", event: "Early Registration Deadline" },
+  { date: "July 31, 2025", event: "Late Registration Deadline" },
+  { date: "August 15-17, 2025", event: "Workshop Dates" }
+]
+---
+
+<section id="dates" class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary-800 animate-on-scroll">
+        Important Dates
+      </h2>
+      
+      <div class="overflow-hidden relative animate-on-scroll">
+        <!-- Vertical line -->
+        <div class="absolute top-0 bottom-0 left-1/2 w-0.5 bg-primary-200 transform -translate-x-1/2"></div>
+        
+        <div class="relative z-10">
+          {importantDates.map((item, index) => (
+            <div class={`flex items-center mb-8 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+              <div class={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'pl-8'}`}>
+                <h3 class="font-semibold text-lg text-primary-700">{item.event}</h3>
+              </div>
+              
+              <div class="w-2/12 flex justify-center">
+                <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white text-sm font-medium border-4 border-white shadow-md transform transition-transform hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+              </div>
+              
+              <div class={`w-5/12 ${index % 2 === 0 ? 'pl-8' : 'text-right pr-8'}`}>
+                <span class="font-medium text-secondary-600">{item.date}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center bg-primary-50 p-6 rounded-lg border border-primary-100 animate-on-scroll">
+        <h3 class="text-xl font-semibold text-primary-800 mb-2">All Deadlines at 11:59 PM (UTC-12)</h3>
+        <p class="text-gray-700">
+          Submission deadlines are firm. Please ensure to submit your work before the specified time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

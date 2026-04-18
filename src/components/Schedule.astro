@@ -1,0 +1,92 @@
+---
+const schedule = [
+  {
+    day: "June 22, 2025 (all times in PDT)",
+    sessions: [
+      { time: "9:00 AM", title: "Opening Remark" },
+      { time: "9:00 AM - 9:40 AM", title: "Keynote 1", speaker: "David Z. Pan" },
+      { time: "9:40 AM - 10:20 AM", title: "Keynote 2", speaker: "Yizhou Sun" },
+      { time: "10:30 AM - 11:00 AM", title: "Coffee Break & Poster Presentation" },
+      { time: "10:40 AM - 11:20 AM", title: "Keynote 3", speaker: "Yiran Chen" },
+      { time: "11:20 AM - 12:00 PM", title: "Keynote 4", speaker: "Peter A. Beerel" },
+      { time: "12:00 PM - 12:40 PM", title: "Keynote 5", speaker: "Tulika Mitra" },
+      { time: "12:40 PM", title: "Closing Remark" },
+    ]
+  },
+  // {
+  //   day: "Day 2 - August 16, 2025",
+  //   sessions: [
+  //     { time: "9:00 - 10:00", title: "Keynote: Quantum Computing in Scientific Applications", speaker: "Dr. Michael Johnson, National Research Institute" },
+  //     { time: "10:00 - 10:30", title: "Coffee Break" },
+  //     { time: "10:30 - 12:00", title: "Session 3: Computational Modeling and Simulation", speaker: "Various Presenters" },
+  //     { time: "12:00 - 13:30", title: "Lunch" },
+  //     { time: "13:30 - 15:00", title: "Session 4: Interdisciplinary Research Methods", speaker: "Various Presenters" },
+  //     { time: "15:00 - 15:30", title: "Coffee Break" },
+  //     { time: "15:30 - 17:00", title: "Poster Session and Networking" },
+  //     { time: "19:00 - 21:00", title: "Conference Dinner (Optional)" }
+  //   ]
+  // },
+  // {
+  //   day: "Day 3 - August 17, 2025",
+  //   sessions: [
+  //     { time: "9:00 - 10:00", title: "Keynote: Ethics and Responsible Innovation", speaker: "Prof. Maria Rodriguez, MIT" },
+  //     { time: "10:00 - 10:30", title: "Coffee Break" },
+  //     { time: "10:30 - 12:00", title: "Session 5: Ethics and Responsible Innovation", speaker: "Various Presenters" },
+  //     { time: "12:00 - 13:30", title: "Lunch" },
+  //     { time: "13:30 - 15:00", title: "Workshop: Collaboration Opportunities", speaker: "Dr. David Chen, Tech Research Labs" },
+  //     { time: "15:00 - 15:30", title: "Closing Remarks and Award Ceremony" },
+  //     { time: "15:30", title: "Workshop Ends" }
+  //   ]
+  // }
+]
+---
+
+<section id="schedule" class="py-16 md:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary-800 animate-on-scroll">
+        Program Schedule
+      </h2>
+      
+      <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto animate-on-scroll">
+        DCgAA 2025 introduces an enhanced program format featuring invited paper talks from DAC, interactive discussions, and panels. A key innovation for this year is the emphasis on dynamic and collaborative elements, such as interactive poster sessions and informal brainstorming opportunities during the coffee break.
+        <!-- , alongside invited paper presentations from top-tier conferences like ICCAD, AAAI, NeurIPS, and ICML. -->
+      </p>
+      
+      <div class="space-y-12 animate-on-scroll">
+        {schedule.map((day, index) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-primary-700 bg-primary-50 inline-block py-2 px-4 rounded-md">
+              {day.day}
+            </h3>
+            
+            <div class="border-l-2 border-primary-200 pl-4 md:pl-6 space-y-6">
+              {day.sessions.map((session) => (
+                <div class="relative">
+                  <div class="absolute left-[20px] md:-left-[32px] md:top-6 top-0 w-4 h-4 bg-primary-500 rounded-full"></div>
+                  <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="md:flex md:justify-between md:items-start">
+                      <div class="mb-2 md:mb-0">
+                        <h4 class="font-medium text-primary-800">{session.title}</h4>
+                        {session.speaker && <p class="text-sm text-secondary-600">{session.speaker}</p>}
+                      </div>
+                      <div class="text-sm text-gray-500 font-medium bg-gray-100 px-3 py-1 rounded-full inline-block">
+                        {session.time}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-12 text-center animate-on-scroll">
+        <p class="text-gray-600 italic">
+          Each talk will be 35 minutes long, followed by a 5-minute Q&A session. The schedule is subject to change, and updates will be provided closer to the event date.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

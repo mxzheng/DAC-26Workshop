@@ -1,0 +1,127 @@
+---
+import dkImage from "../assets/team/dk.jpeg";
+import TinooshMoshseninImage from "../assets/team/TinooshMohsenin.webp";
+import CaiwenDingImage from "../assets/team/caiwen.jpg";
+import HuaWeiImage from "../assets/team/hwei27.png";
+import AngLiImage from "../assets/team/angLi.jpg";
+import PeipeiZhouImage from "../assets/team/peipeiZhou.jpg";
+import CelineYinImage from "../assets/team/celineLin.jpg";
+import YanzhiWangImage from "../assets/team/yanzhiWang.jpg";
+import HarshMaunyImage from "../assets/team/harshM.jpg";
+import BowenChenImage from "../assets/team/berwin.png";
+import ChaojianLiImage from "../assets/team/chaojianLi.png";
+import yangSuiImage from "../assets/team/yangSui.jpg";
+
+type Person = {
+  name: string;
+  title?: string;
+  affiliation: string;
+  link?: string;
+  img?: string;
+};
+
+type OrganizerCategory = {
+  category: string;
+  people: Person[];
+};
+
+const organizers: OrganizerCategory[] = [
+  {
+    category: "Organization Team",
+    people: [
+      { name: "Dongkuan (DK) Xu", title: "Assistant Professor", affiliation: "North Carolina State University, USA", link: "https://dongkuanx27.github.io/", img: dkImage.src },
+      { name: "Tinoosh Mohsenin", title: "Associate Professor", affiliation: "Johns Hopkins University, USA", link: "https://engineering.jhu.edu/faculty/tinoosh-mohsenin/", img: TinooshMoshseninImage.src },
+      { name: "Caiwen Ding", title: "Associate Professor", affiliation: "University of Minnesota Twin Cities, USA", link: "https://caiwending.github.io/web/home.html", img: CaiwenDingImage.src },
+      { name: "Hua Wei", title: "Assistant Professor", affiliation: "Arizona State University, USA", link: "https://search.asu.edu/profile/3095662", img: HuaWeiImage.src },
+      { name: "Ang Li", title: "Assistant professor", affiliation: "University of Maryland College Park, USA", link: "https://www.ang-li.com/", img: AngLiImage.src },
+      { name: "Peipei Zhou", title: "Assistant Professor", affiliation: "Brown University, USA", link: "https://peipeizhou-eecs.github.io/", img: PeipeiZhouImage.src },
+      { name: "Yingyan (Celine) Lin", title: "Associate Professor", affiliation: "Georgia Institute of Technology, USA", link: "https://eiclab.scs.gatech.edu/pages/team.html", img: CelineYinImage.src },
+      { name: "Yanzhi Wang", title: "Associate Professor and faculty fellow", affiliation: "Northeastern University, USA", link: "https://coe.northeastern.edu/people/wang-yanzhi/", img: YanzhiWangImage.src },
+    ]
+  },
+  {
+    category: "Student Contributors",
+    people: [
+      
+      { name: "Harsh Mauny",title: "Master's Student (CS)", affiliation: "North Carolina State University, USA", img:HarshMaunyImage.src, link:"https://harshmauny.co" },
+      { name: "Bowen Chen", title:"Ph.D. student",affiliation: "North Carolina State University, USA", img: BowenChenImage.src, link:"https://berwin.cc/" },
+      {name: "Chaojian Li", title: "Ph.D. student", affiliation: "Georgia Tech, USA", link:"https://licj15.github.io/", img: ChaojianLiImage.src },
+      {name: "Yang Sui", title: "Postdoctoral Associate (CS)", affiliation: "Rice University, USA", link: "https://eclipsess.github.io/yangsui.github.io/", img: yangSuiImage.src}
+    ] 
+  }
+];
+---
+
+<section id="organization" class="py-16 md:py-24 bg-white">
+  {console.log(dkImage.src)}
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary-800 animate-on-scroll">
+        Workshop Organization
+      </h2>
+      
+      <div class="space-y-10 animate-on-scroll">
+        {organizers.map((category) => (
+            <div>
+            <h3 class="text-xl font-semibold mb-4 text-primary-700 border-b border-primary-200 pb-2">
+              {category.category}
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              {category.people.map((person) => (
+              <div class="flex items-center bg-gray-50 p-4 rounded-lg hover:shadow-sm transition-shadow duration-300">
+                {person.img && (
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  class="w-20 h-20 rounded-full mr-4"
+                />
+                )}
+                <div>
+                <h4 class="font-medium text-secondary-800">
+                  {person.link ? (
+                  <a
+                    href={person.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary-600 hover:underline"
+                  >
+                    {person.name}
+                  </a>
+                  ) : (
+                  person.name
+                  )}
+                </h4>
+                {person.title && (
+                  <p class="text-sm text-gray-500">{person.title}</p>
+                )}
+                <p class="text-sm text-gray-600">{person.affiliation}</p>
+                </div>
+              </div>
+              ))}
+            </div>
+            </div>
+        ))}
+      </div>
+      
+      <!-- <div class="mt-16 bg-primary-50 rounded-lg p-6 border border-primary-100 animate-on-scroll">
+        <h3 class="text-xl font-semibold mb-4 text-primary-800 text-center">
+          Diversity and Inclusion
+        </h3>
+        
+        <p class="text-center text-gray-700 mb-6">
+          At DCgAA 2025, we recognize that diversity is essential to innovation and progress at the intersection of deep learning and hardware design. We are committed to creating an inclusive environment that celebrates a wide range of perspectives and experiences. Our organizing committee prioritizes demographic representation across genders, races, nationalities, and professional backgrounds among speakers, organizers, and participants. This year, we have broadened our outreach to include global experts from diverse institutions, industries, and research areas. To support inclusivity, we offer a tiered registration structure with discounts for students, early-career researchers, and individuals from underrepresented regions. By fostering a culture of respect, collaboration, and openness, DCgAA 2025 aims to inspire meaningful exchange and collective growth in the field of generative AI.
+        </p>
+        
+        <div class="text-center">
+          <a href="#" class="text-primary-600 hover:text-primary-800 font-medium inline-flex items-center">
+            View All Committee Members
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
