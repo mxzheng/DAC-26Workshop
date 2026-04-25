@@ -1,24 +1,68 @@
-# DCGAA Workshop website
+# SPGAI 2026 — Workshop Website
 
-The 2nd International Workshop on Deep Learning-Hardware Co-Design for Generative AI Acceleration
+Official website for the **Workshop on Secure and Private System Design for Generative and Agentic AI (SPGAI 2026)**, co-located with the 63rd IEEE/ACM Design Automation Conference (DAC), July 26, 2026, Long Beach, California, USA.
 
-This is a showcase website for FCGAA workshop
+🌐 **Live Site**: [www.qlou.org/SPGAI/]
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## About the Workshop
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Generative and agentic AI are reshaping computing at every layer, from research and infrastructure to the design of the systems themselves. SPGAI 2026 is the first cross-layer forum at DAC dedicated to the secure and private deployment of generative and agentic AI systems. The workshop brings together leading researchers and industry practitioners to explore emerging challenges across three themes:
 
-## Tech stack used
+- **Theme 1** — Secure, Private, and Trustworthy AI and Agents
+- **Theme 2** — Securing the Artifacts of AI and Agents
+- **Theme 3** — Generative and Agentic AI for Security, Privacy, and Trustworthiness
 
-- [Astro](https://astro.build/) - web framework for content-driven websites
-- [Astro/react](https://docs.astro.build/en/guides/integrations-guide/react/) - enables rendering and client-side hydration for your React components.
-- [tailwind](https://tailwindcss.com/) - for styling utility first CSS framework.
+---
+
+## Tech Stack
+
+- [Astro](https://astro.build/) — Static site framework
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first CSS
+- [React](https://react.dev/) — Interactive components
+- [GitHub Pages](https://pages.github.com/) — Hosting
+- [GitHub Actions](https://github.com/features/actions) — CI/CD deployment
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/mxzheng/DAC-26Workshop.git
+cd DAC-26Workshop
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:4321](http://localhost:4321) in your browser.
+
+### Build
+
+```bash
+npm run build
+```
+
+The static site will be generated in the `dist/` folder.
+
+---
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages via GitHub Actions on every push to the `main` branch.
+
+To deploy manually, trigger the workflow from the **Actions** tab in GitHub.
+
+---
