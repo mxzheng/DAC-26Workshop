@@ -1,7 +1,5 @@
-
 ---
 import workshopImage from "../assets/team/workshop.webp";
-
 const importantDates = [
   { date: "May 15, 2026", event: "Paper Submission Deadline" },
   { date: "May 30, 2026", event: "Notification of Acceptance" },
@@ -17,7 +15,7 @@ const importantDates = [
 
       <!-- Title -->
       <h2 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 animate-on-scroll">
-      Secure and Private System Design for Generative & Agentic AI
+        Secure and Private System Design for Generative & Agentic AI
       </h2>
 
       <!-- Time & Location -->
@@ -25,7 +23,7 @@ const importantDates = [
         <span class="font-bold">Time:</span> 9:00 - 17:00 (PDT), July 26, 2026
       </p>
       <p class="text-lg font-semibold text-gray-800 mb-8 animate-on-scroll">
-        <span class="font-bold">Location:</span> 	Mtg Room 101A, Long Beach (Co-located with DAC 2026)
+        <span class="font-bold">Location:</span> Mtg Room 101A, Long Beach (Co-located with DAC 2026)
       </p>
 
       <!-- Image -->
@@ -33,40 +31,33 @@ const importantDates = [
         <img
           src={workshopImage.src}
           alt="Workshop Venue"
-         class="w-1/2 max-w-sm mx-auto rounded-lg shadow-md object-cover"
+          class="w-1/2 max-w-sm mx-auto rounded-lg shadow-md object-cover"
         />
       </div>
 
       <!-- Description -->
-      <div class="text-left animate-on-scroll">
+      <div class="text-left animate-on-scroll mb-12">
         <p class="text-gray-700 leading-relaxed text-justify">
-         The SPGAI workshop at DAC 2026 will focus on how to ensure the security, privacy, and verifiability of generative and agentic AI systems used in EDA automation, chip design, and semiconductor development. It is the first cross-layer forum at DAC dedicated to this topic, aiming to address emerging challenges as AI systems generate RTL, verify designs, interact with sensitive intellectual property, and operate autonomously across complex toolchains. The workshop will bring together leading researchers and industry practitioners to integrate advances in cryptography, hardware architecture, verifiable computing, AI security, and design automation. It will feature keynotes, technical presentations, and interactive discussions, and will provide new methods, system frameworks, and evaluation approaches for building trustworthy AI systems in hardware and EDA workflows.
+          The SPGAI workshop at DAC 2026 will focus on how to ensure the security, privacy, and verifiability of generative and agentic AI systems used in EDA automation, chip design, and semiconductor development. It is the first cross-layer forum at DAC dedicated to this topic, aiming to address emerging challenges as AI systems generate RTL, verify designs, interact with sensitive intellectual property, and operate autonomously across complex toolchains. The workshop will bring together leading researchers and industry practitioners to integrate advances in cryptography, hardware architecture, verifiable computing, AI security, and design automation. It will feature keynotes, technical presentations, and interactive discussions, and will provide new methods, system frameworks, and evaluation approaches for building trustworthy AI systems in hardware and EDA workflows.
         </p>
       </div>
 
- <!-- Important Dates -->
-      <div class="animate-on-scroll">
-        <h3 class="text-2xl font-bold text-primary-800 mb-6 text-center">
-          Important Dates
+      <!-- Important Dates -->
+      <div class="text-left animate-on-scroll">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">
+          Important Dates:
         </h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="bg-primary-50 border-b border-primary-200">
-                <th class="py-3 px-6 text-primary-800 font-semibold">Date</th>
-                <th class="py-3 px-6 text-primary-800 font-semibold">Event</th>
-              </tr>
-            </thead>
-            <tbody>
-              {importantDates.map((item, index) => (
-                <tr class={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-primary-50 transition-colors duration-200`}>
-                  <td class="py-3 px-6 text-primary-600 font-medium">{item.date}</td>
-                  <td class="py-3 px-6 text-gray-700">{item.event}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div class="divide-y divide-gray-200">
+          {importantDates.map((item) => (
+            <div class="flex justify-between items-center py-3">
+              <span class="text-gray-700">{item.event}</span>
+              <span class="text-gray-800 font-medium ml-8 whitespace-nowrap">{item.date}</span>
+            </div>
+          ))}
         </div>
+      <p class="mt-6 font-bold text-gray-900">
+          More details available at <a href="#" class="text-primary-600 underline hover:text-primary-800">Call For Paper</a>
+        </p>
       </div>
 
     </div>
