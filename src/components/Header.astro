@@ -1,5 +1,44 @@
-<a href="#" data-section="about" class="nav-item text-gray-600">About</a>
-<a href="#" data-section="topics" class="nav-item text-gray-600">Topics</a>
-<a href="#" data-section="speakers" class="nav-item text-gray-600">Speakers</a>
-<a href="#" data-section="schedule" class="nav-item text-gray-600">Schedule</a>
-<a href="#" data-section="organization" class="nav-item text-gray-600">Organization</a>
+---
+---
+<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+  <div class="container mx-auto px-8 py-4">
+    <nav class="flex items-center justify-end gap-8">
+      <a href="#" data-section="about" class="nav-item text-gray-800 font-bold text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+        About
+      </a>
+      <a href="#" data-section="topics" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+        Topics
+      </a>
+      <a href="#" data-section="speakers" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+        Speakers
+      </a>
+      <a href="#" data-section="schedule" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+        Schedule
+      </a>
+      <a href="#" data-section="organization" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+        Organization
+      </a>
+    </nav>
+  </div>
+
+  <!-- Mobile menu button -->
+  <div class="md:hidden flex justify-end px-4 py-2">
+    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-2">
+    <a href="#" data-section="about" class="nav-item block py-2 text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600">About</a>
+    <a href="#" data-section="topics" class="nav-item block py-2 text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600">Topics</a>
+    <a href="#" data-section="speakers" class="nav-item block py-2 text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600">Speakers</a>
+    <a href="#" data-section="schedule" class="nav-item block py-2 text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600">Schedule</a>
+    <a href="#" data-section="organization" class="nav-item block py-2 text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600">Organization</a>
+  </div>
+</header>
+
+<!-- Spacer to prevent content from hiding behind fixed header -->
+<div class="h-16"></div>
