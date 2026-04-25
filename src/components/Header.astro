@@ -1,73 +1,13 @@
----
-const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Topics", href: "#topics" },
-  { name: "Speakers", href: "#speakers" },
-  { name: "Schedule", href: "#schedule" },
-   { name: "Important Dates", href: "#dates" },
-  { name: "Submission", href: "#submission" },
-  { name: "Organization", href: "#organization" },
-];
----
+<!-- Before -->
+<a href="#about" class="nav-item text-gray-600">About</a>
+<a href="#topics" class="nav-item text-gray-600">Topics</a>
+<a href="#speakers" class="nav-item text-gray-600">Speakers</a>
+<a href="#schedule" class="nav-item text-gray-600">Schedule</a>
+<a href="#organization" class="nav-item text-gray-600">Organization</a>
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300">
-  <div class="container mx-auto px-4 py-3 md:py-4">
-    <nav class="flex items-center justify-between">
-      <a href="#" class="text-xl font-bold text-primary-700">
-        SPGAI<span class="text-secondary-600"> 2026</span>
-      </a>
-      
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-6">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class="nav-item text-gray-600 hover:text-primary-600 transition-colors duration-300 text-sm lg:text-base"
-            >
-              {item.name}
-            </a>
-          ))
-        }
-      </div>
-      
-      <!-- Mobile Menu Button -->
-      <button
-        id="menu-toggle"
-        class="md:hidden flex items-center text-gray-600 focus:outline-none"
-        aria-label="Toggle mobile menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-      </button>
-    </nav>
-  </div>
-  
-  <!-- Mobile Navigation Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
-    <div class="container mx-auto px-4 py-2">
-      {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class="block py-2 text-gray-600 hover:text-primary-600 transition-colors duration-300"
-          >
-            {item.name}
-          </a>
-        ))
-      }
-    </div>
-  </div>
-</header>
+<!-- After -->
+<a href="#" data-section="about" class="nav-item text-gray-600">About</a>
+<a href="#" data-section="topics" class="nav-item text-gray-600">Topics</a>
+<a href="#" data-section="speakers" class="nav-item text-gray-600">Speakers</a>
+<a href="#" data-section="schedule" class="nav-item text-gray-600">Schedule</a>
+<a href="#" data-section="organization" class="nav-item text-gray-600">Organization</a>
