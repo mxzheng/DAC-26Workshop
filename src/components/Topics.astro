@@ -1,58 +1,124 @@
 ---
-const topics = [
-  {
-    title: "Protecting AI-Generated Hardware IP",
-    description: "Ensuring ownership, traceability, and copyright protection of AI-generated RTL, layouts, and design assets across the semiconductor supply chain.",
-  },
-  {
-    title: "Trustworthy AI Reasoning in EDA Workflows",
-    description: "Building auditable and verifiable AI systems that can be trusted to make reliable decisions in chip design, verification, and synthesis pipelines.",
-  },
-  {
-    title: "Privacy-Safe AI Deployment in Chip Design",
-    description: "Enabling AI-assisted design workflows that operate on sensitive semiconductor data without exposing proprietary information to untrusted parties.",
-  },
-  {
-    title: "Defending Against Attacks on Generative AI",
-    description: "Protecting AI systems used in hardware design from manipulation, data corruption, and unauthorized extraction of model knowledge or design secrets.",
-  },
-  {
-    title: "Safe Autonomous AI Agents in Engineering Workflows",
-    description: "Ensuring that AI agents operating across complex EDA toolchains behave safely, predictably, and within trusted boundaries without human intervention.",
-  },
-  {
-    title: "Secure AI Acceleration in Sensitive Environments",
-    description: "Deploying AI inference and training workloads in environments where hardware-level isolation and data confidentiality are critical requirements.",
-  },
-  {
-    title: "AI-Assisted Secure Chip Verification",
-    description: "Leveraging AI to detect security vulnerabilities, hidden backdoors, and design flaws in chip designs before fabrication.",
-  },
-  {
-    title: "Responsible Generative AI in Semiconductor Development",
-    description: "Addressing the governance, accountability, and safety challenges of using generative AI across the full semiconductor design and development lifecycle.",
-  },
-]
 ---
-<section id="topics" class="py-16 md:py-24 bg-gray-50">
+<section id="topics" class="py-16 md:py-24 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary-800 animate-on-scroll">
-        Workshop Topics
+
+      <!-- Title -->
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-2 text-primary-800">
+        Call for Papers
       </h2>
-      
-      <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto animate-on-scroll">
-        The workshop will cover a broad range of topics to illuminate cutting-edge advancements and facilitate collaboration across domains, including:
+      <p class="text-center text-gray-600 mb-10">
+        SPGAI 2026 Workshop: Secure and Private System Design for Generative and Agentic AI ·
+        Co-located with the 63rd IEEE/ACM Design Automation Conference (DAC), 2026.
       </p>
-      
-      <div class="grid md:grid-cols-2 gap-6 animate-on-scroll">
-        {topics.map((topic, index) => (
-          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <h3 class="text-lg font-semibold mb-2 text-primary-700">{topic.title}</h3>
-            <p class="text-gray-600">{topic.description}</p>
-          </div>
-        ))}
+
+      <!-- Overview -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Overview</h3>
+        <p class="text-gray-700 leading-relaxed text-justify">
+          Generative and agentic AI are reshaping computing at every layer, from research and infrastructure to the design of the systems themselves. As these capabilities are embedded into how silicon, software, and full-stack platforms get built and verified, both the threat surface and the means to defend it are being rewritten. The SPGAI 2026 Workshop, co-hosted with DAC, confronts this dual frontier: hardening AI agents and the artifacts they generate against new and largely unmapped attack surfaces, while harnessing those same agents as a force multiplier for vulnerability discovery, secure-by-construction generation, automated compliance, and trustworthy verification. The program is organized around three intertwined themes and welcomes contributions across EDA, chip and SoC security, quantum and neuromorphic computing, electro-optic co-design, and embedded and cyber-physical systems.
+        </p>
       </div>
+
+      <!-- Topics of Interest -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Topics of Interest</h3>
+        <p class="text-gray-600 mb-6">We solicit original contributions on topics including, but not limited to:</p>
+
+        <!-- Theme 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-semibold text-primary-700 mb-3">
+            Theme 1 — Secure, Private, and Trustworthy AI and Agents
+          </h4>
+          <ul class="space-y-2 text-gray-700 list-disc list-inside">
+            <li>Privacy-preserving training and fine-tuning of foundation models for design (federated, differentially private, and confidential computing approaches)</li>
+            <li>Defenses against prompt injection, jailbreaks, and tool misuse in agentic design workflows</li>
+            <li>Secure multi-agent orchestration, sandboxing, and least-privilege tool use for design automation</li>
+            <li>Trust, alignment, and reliability of LLMs and agents in safety- and security-critical design loops</li>
+            <li>Confidentiality of proprietary IP, netlists, and source code during LLM-aided generation</li>
+            <li>Inference-time defenses, guardrails, and verifiable reasoning for design agents</li>
+            <li>Robustness against data poisoning, model extraction, and supply-chain attacks on generative design pipelines</li>
+          </ul>
+        </div>
+
+        <!-- Theme 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-semibold text-primary-700 mb-3">
+            Theme 2 — Securing the Artifacts of AI and Agents
+          </h4>
+          <ul class="space-y-2 text-gray-700 list-disc list-inside">
+            <li>Detection, attribution, and watermarking of LLM- and agent-generated RTL, HLS, layouts, and software</li>
+            <li>Hardware Trojans, backdoors, and malicious patterns introduced (intentionally or unintentionally) by generative AI</li>
+            <li>Verification, formal methods, and testing tailored to AI-generated designs</li>
+            <li>Provenance, traceability, and reproducibility of AI-generated design artifacts</li>
+            <li>Copyright, licensing, and IP-leakage analysis of generated code and designs</li>
+            <li>Secure release and open-sourcing practices for AI-generated artifacts and benchmarks</li>
+            <li>Privacy leakage and memorization analysis in LLM-generated designs</li>
+          </ul>
+        </div>
+
+        <!-- Theme 3 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-semibold text-primary-700 mb-3">
+            Theme 3 — Generative and Agentic AI for Security, Privacy, and Trustworthiness
+          </h4>
+          <ul class="space-y-2 text-gray-700 list-disc list-inside">
+            <li>LLM- and agent-driven vulnerability discovery, fuzzing, and exploit generation for hardware and software</li>
+            <li>Generative AI for secure-by-construction RTL, HLS, EDA scripting, and physical design</li>
+            <li>Agentic workflows for security verification, side-channel analysis, and threat modeling</li>
+            <li>LLMs for cryptographic protocol design, post-quantum migration, and confidential computing</li>
+            <li>AI-aided regulatory compliance, audit, and policy enforcement for design and IT automation</li>
+            <li>Generative and agentic AI for privacy-enhancing technologies (PETs)</li>
+            <li>LLM-aided security of emerging technologies: quantum, neuromorphic, and electro-optic systems</li>
+            <li>Datasets, benchmarks, and competitions for evaluating secure and private generative/agentic design</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Important Dates -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Important Dates</h3>
+        <div class="divide-y divide-gray-200">
+          <div class="flex justify-between items-center py-3">
+            <span class="text-gray-700">Paper Submission</span>
+            <span class="text-gray-800 font-medium whitespace-nowrap">TBD, 2026 (AoE)</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <span class="text-gray-700">Notification of Acceptance</span>
+            <span class="text-gray-800 font-medium whitespace-nowrap">TBD, 2026 (AoE)</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <span class="text-gray-700">Camera-Ready Paper</span>
+            <span class="text-gray-800 font-medium whitespace-nowrap">TBD, 2026 (AoE)</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <span class="text-gray-700">Workshop Date</span>
+            <span class="text-gray-800 font-medium whitespace-nowrap">Co-located with DAC 2026</span>
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm mt-3 italic">Final dates will be announced on the workshop website.</p>
+      </div>
+
+      <!-- Submission Instructions -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Submission Instructions</h3>
+        <p class="text-gray-700 leading-relaxed text-justify">
+          The workshop invites regular papers of 2 to 6 pages in the IEEE Conference format (IEEE templates), with page limits excluding references. Submissions are not anonymized: author names, affiliations, and acknowledgments should be included in the paper. We encourage submissions with a commitment to open and reproducible research, including datasets, models, and methods. Papers with open-source implementations will be highlighted at the workshop. Submissions will be handled via EasyChair; the submission link will be posted on the workshop website.
+        </p>
+      </div>
+
+      <!-- Policy -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Policy on Submissions</h3>
+        <p class="text-gray-700 leading-relaxed text-justify mb-3">
+          SPGAI 2026 expects previously unpublished papers describing original research, but concurrent submissions to other venues or already-published papers are also permitted. Accepted papers will not appear in formal workshop proceedings.
+        </p>
+        <p class="text-gray-700 leading-relaxed text-justify">
+          Authors of accepted papers will have the opportunity to present a poster or oral presentation at the workshop. Selected authors may also be invited to co-author a Systematization of Knowledge (SoK) paper on the topic together with the workshop organizers.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
