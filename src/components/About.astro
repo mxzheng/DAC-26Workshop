@@ -1,6 +1,12 @@
 
 ---
 import workshopImage from "../assets/team/workshop.webp";
+const importantDates = [
+  { date: "May 15, 2026", event: "Paper Submission Deadline" },
+  { date: "May 30, 2026", event: "Notification of Acceptance" },
+  { date: "June 15, 2026", event: "Camera-Ready Paper Submission" },
+  { date: "June 11, 2026", event: "Early Registration Deadline" },
+  { date: "July 26, 2026", event: "Workshop Dates" },
 ---
 <section id="about" class="py-16 md:py-24 bg-white">
   <div class="container mx-auto px-4">
@@ -33,6 +39,31 @@ import workshopImage from "../assets/team/workshop.webp";
         <p class="text-gray-700 leading-relaxed text-justify">
          The SPGAI workshop at DAC 2026 will focus on how to ensure the security, privacy, and verifiability of generative and agentic AI systems used in EDA automation, chip design, and semiconductor development. It is the first cross-layer forum at DAC dedicated to this topic, aiming to address emerging challenges as AI systems generate RTL, verify designs, interact with sensitive intellectual property, and operate autonomously across complex toolchains. The workshop will bring together leading researchers and industry practitioners to integrate advances in cryptography, hardware architecture, verifiable computing, AI security, and design automation. It will feature keynotes, technical presentations, and interactive discussions, and will provide new methods, system frameworks, and evaluation approaches for building trustworthy AI systems in hardware and EDA workflows.
         </p>
+      </div>
+
+ <!-- Important Dates -->
+      <div class="animate-on-scroll">
+        <h3 class="text-2xl font-bold text-primary-800 mb-6 text-center">
+          Important Dates
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-primary-50 border-b border-primary-200">
+                <th class="py-3 px-6 text-primary-800 font-semibold">Date</th>
+                <th class="py-3 px-6 text-primary-800 font-semibold">Event</th>
+              </tr>
+            </thead>
+            <tbody>
+              {importantDates.map((item, index) => (
+                <tr class={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-primary-50 transition-colors duration-200`}>
+                  <td class="py-3 px-6 text-primary-600 font-medium">{item.date}</td>
+                  <td class="py-3 px-6 text-gray-700">{item.event}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </div>
