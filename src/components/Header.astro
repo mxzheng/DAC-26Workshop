@@ -2,21 +2,34 @@
 ---
 <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
   <div class="container mx-auto px-8 py-4">
-    <nav class="flex items-center justify-end gap-8">
-      <a href="#" data-section="about" class="nav-item text-gray-800 font-bold text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
-        About
-     <a href="#" data-section="topics" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
-  Call For Papers
-</a>
-      <a href="#" data-section="speakers" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
-        Speakers
+    <nav class="flex items-center justify-between gap-8">
+
+      <!-- Logo on the left -->
+      <a href="#" data-section="about" class="flex items-center gap-2 text-primary-700 font-bold text-lg tracking-tight">
+        <div class="w-8 h-8 rounded-md bg-primary-600 flex items-center justify-center text-white text-xs font-bold leading-none">
+          SP<br/>GAI
+        </div>
+        <span class="hidden md:inline text-gray-900 font-bold text-sm uppercase tracking-widest">SPGAI 2026</span>
       </a>
-      <a href="#" data-section="schedule" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
-        Schedule
-      </a>
-      <a href="#" data-section="organization" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
-        Organization
-      </a>
+
+      <!-- Nav links on the right -->
+      <div class="flex items-center gap-8">
+        <a href="#" data-section="about" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+          About
+        </a>
+        <a href="#" data-section="topics" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+          Call For Papers
+        </a>
+        <a href="#" data-section="speakers" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+          Speakers
+        </a>
+        <a href="#" data-section="schedule" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+          Schedule
+        </a>
+        <a href="#" data-section="organization" class="nav-item text-gray-600 text-sm uppercase tracking-widest hover:text-primary-600 transition-colors duration-200">
+          Organization
+        </a>
+      </div>
     </nav>
   </div>
 
@@ -39,5 +52,5 @@
   </div>
 </header>
 
-<!-- Spacer to prevent content from hiding behind fixed header -->
+<!-- Spacer -->
 <div class="h-16"></div>
