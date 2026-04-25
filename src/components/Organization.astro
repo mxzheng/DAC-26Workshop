@@ -3,101 +3,80 @@ import mxImage from "../assets/team/mx.jpeg";
 import QLImage from "../assets/team/lq.jpg";
 import WuImage from "../assets/team/wu.jpg";
 
-type Person = {
-  name: string;
-  title?: string;
-  affiliation: string;
-  link?: string;
-  img?: string;
-};
+// Add steering member photo imports here
+import steering1Image from "../assets/team/steering1.jpg";
+import steering2Image from "../assets/team/steering2.jpg";
+import steering3Image from "../assets/team/steering3.jpg";
+import steering4Image from "../assets/team/steering4.jpg";
 
-type OrganizerCategory = {
-  category: string;
-  people: Person[];
-};
+const organizers = [
+  { name: "Qian Lou", title: "Assistant Professor", affiliation: "University of Central Florida, USA", link: "https://www.qlou.org/", img: QLImage.src },
+  { name: "Mengxin Zheng", title: "Assistant Professor", affiliation: "University of Central Florida, USA", link: "https://mxzheng.github.io/", img: mxImage.src },
+  { name: "Hongyi Michael Wu", title: "Professor", affiliation: "University of Arizona, USA", link: "https://wu.static.arizona.edu/", img: WuImage.src },
+];
 
-const organizers: OrganizerCategory[] = [
-  {
-    category: "Organization Team",
-    people: [
-      { name: "Qian Lou", title: "Assistant Professor", affiliation: "University of Central Florida, USA", link: "https://www.qlou.org/", img: QLImage.src },
-      { name: "Hongyi Michael Wu", title: "Professor", affiliation: "University of Arizona, USA", link: "https://wu.static.arizona.edu/", img: WuImage.src },
-      { name: "Mengxin Zheng", title: "Assistant Professor", affiliation: "University of Central Florida, USA", link: "https://mxzheng.github.io/", img: mxImage.src },
-    ]
-  },
+const steering = [
+  { name: "Steering Member", affiliation: "Affiliation", img: steering1Image.src },
+  { name: "Steering Member", affiliation: "Affiliation", img: steering2Image.src },
+  { name: "Steering Member", affiliation: "Affiliation", img: steering3Image.src },
+  { name: "Steering Member", affiliation: "Affiliation", img: steering4Image.src },
 ];
 ---
 
 <section id="organization" class="py-16 md:py-24 bg-white">
-  {console.log(QLImage.src)}
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-primary-800 animate-on-scroll">
-        Workshop Organization
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-primary-800 animate-on-scroll">
+        Organizing Committee
       </h2>
-      
-      <div class="space-y-10 animate-on-scroll">
-        {organizers.map((category) => (
-            <div>
-            <h3 class="text-xl font-semibold mb-4 text-primary-700 border-b border-primary-200 pb-2">
-              {category.category}
-            </h3>
-            
-            <div class="grid md:grid-cols-2 gap-4">
-              {category.people.map((person) => (
-              <div class="flex items-center bg-gray-50 p-4 rounded-lg hover:shadow-sm transition-shadow duration-300">
-                {person.img && (
-                <img
-                  src={person.img}
-                  alt={person.name}
-                  class="w-20 h-20 rounded-full mr-4"
-                />
-                )}
-                <div>
-                <h4 class="font-medium text-secondary-800">
+
+      <!-- Organization Team -->
+      <div class="mb-12 animate-on-scroll">
+        <h3 class="text-xl font-semibold mb-6 text-primary-700 border-b border-primary-200 pb-2">
+          Organization Team
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          {organizers.map((person) => (
+            <div class="flex items-center bg-gray-50 p-4 rounded-lg hover:shadow-sm transition-shadow duration-300">
+              {person.img && (
+                <img src={person.img} alt={person.name} class="w-20 h-20 rounded-full mr-4 object-cover" />
+              )}
+              <div>
+                <h4 class="font-medium">
                   {person.link ? (
-                  <a
-                    href={person.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary-600 hover:underline"
-                  >
-                    {person.name}
-                  </a>
+                    <a href={person.link} target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">
+                      {person.name}
+                    </a>
                   ) : (
-                  person.name
+                    person.name
                   )}
                 </h4>
-                {person.title && (
-                  <p class="text-sm text-gray-500">{person.title}</p>
-                )}
+                {person.title && <p class="text-sm text-gray-500">{person.title}</p>}
                 <p class="text-sm text-gray-600">{person.affiliation}</p>
-                </div>
               </div>
-              ))}
             </div>
-            </div>
-        ))}
-      </div>
-      
-      <!-- <div class="mt-16 bg-primary-50 rounded-lg p-6 border border-primary-100 animate-on-scroll">
-        <h3 class="text-xl font-semibold mb-4 text-primary-800 text-center">
-          Diversity and Inclusion
-        </h3>
-        
-        <p class="text-center text-gray-700 mb-6">
-          At, we recognize that diversity is essential to innovation and progress at the intersection of deep learning and hardware design. We are committed to creating an inclusive environment that celebrates a wide range of perspectives and experiences. Our organizing committee prioritizes demographic representation across genders, races, nationalities, and professional backgrounds among speakers, organizers, and participants. This year, we have broadened our outreach to include global experts from diverse institutions, industries, and research areas. To support inclusivity, we offer a tiered registration structure with discounts for students, early-career researchers, and individuals from underrepresented regions. By fostering a culture of respect, collaboration, and openness, DCgAA 2025 aims to inspire meaningful exchange and collective growth in the field of generative AI.
-        </p>
-        
-        <div class="text-center">
-          <a href="#" class="text-primary-600 hover:text-primary-800 font-medium inline-flex items-center">
-            View All Committee Members
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
+          ))}
         </div>
-      </div> -->
+      </div>
+
+      <!-- Steering Committee -->
+      <div class="animate-on-scroll">
+        <h3 class="text-xl font-semibold mb-6 text-primary-700 border-b border-primary-200 pb-2">
+          Steering Committee
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          {steering.map((person) => (
+            <div class="flex items-center bg-gray-50 p-4 rounded-lg hover:shadow-sm transition-shadow duration-300">
+              <img src={person.img} alt={person.name} class="w-20 h-20 rounded-full mr-4 object-cover" />
+              <div>
+                <h4 class="font-medium text-gray-800">{person.name}</h4>
+                <p class="text-sm text-gray-600">{person.affiliation}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
