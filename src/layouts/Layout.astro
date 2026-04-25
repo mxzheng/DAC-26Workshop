@@ -1,54 +1,82 @@
-<script>
-  function showSection(id) {
-    document.querySelectorAll('.tab-section').forEach(s => {
-      s.style.display = 'none';
-    });
-    document.querySelectorAll('.nav-item').forEach(n => {
-      n.classList.remove('text-primary-600', 'font-semibold');
-      n.classList.add('text-gray-600');
-    });
-    const target = document.getElementById(id);
-    if (target) target.style.display = 'block';
-    const activeNav = document.querySelector(`.nav-item[data-section="${id}"]`);
-    if (activeNav) {
-      activeNav.classList.add('text-primary-600', 'font-semibold');
-      activeNav.classList.remove('text-gray-600');
-    }
-  }
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "Secure and Private System Design for Generative & Agentic AI" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <style>
+      .tab-section {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <slot />
+    <script>
+      function showSection(id) {
+        document.querySelectorAll('.tab-section').forEach(s => {
+          s.style.display = 'none';
+        });
+        document.querySelectorAll('.nav-item').forEach(n => {
+          n.classList.remove('text-primary-600', 'font-semibold');
+          n.classList.add('text-gray-600');
+        });
+        const target = document.getElementById(id);
+        if (target) target.style.display = 'block';
+        const activeNav = document.querySelector(`.nav-item[data-section="${id}"]`);
+        if (activeNav) {
+          activeNav.classList.add('text-primary-600', 'font-semibold');
+          activeNav.classList.remove('text-gray-600');
+        }
+      }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Hide all sections first
-    document.querySelectorAll('.tab-section').forEach(s => {
-      s.style.display = 'none';
-    });
+      document.addEventListener('DOMContentLoaded', () => {
+        // Hide all sections first
+        document.querySelectorAll('.tab-section').forEach(s => {
+          s.style.display = 'none';
+        });
 
-    // Show about by default
-    const about = document.getElementById('about');
-    if (about) about.style.display = 'block';
+        // Show about by default
+        const about = document.getElementById('about');
+        if (about) about.style.display = 'block';
 
-    // Nav click handlers
-    document.querySelectorAll('.nav-item').forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const section = item.getAttribute('data-section');
-        if (section) showSection(section);
+        // Nav click handlers
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const section = item.getAttribute('data-section');
+            if (section) showSection(section);
+          });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle')?.addEventListener('click', () => {
+          document.getElementById('mobile-menu')?.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            document.getElementById('mobile-menu')?.classList.add('hidden');
+          });
+        });
+
+        // Animate elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          el.classList.add('animate-fade-in');
+        });
       });
-    });
-
-    // Mobile menu toggle
-    document.getElementById('menu-toggle')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu')?.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobile-menu')?.classList.add('hidden');
-      });
-    });
-
-    // Animate elements
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      el.classList.add('animate-fade-in');
-    });
-  });
-</script>
+    </script>
+  </body>
+</html>
