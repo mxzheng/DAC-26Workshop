@@ -24,59 +24,54 @@ const { title, description = "Secure and Private System Design for Generative & 
   </head>
   <body class="bg-gray-50 text-gray-900 font-sans">
     <slot />
-    <script>
-      function showSection(id) {
-        document.querySelectorAll('.tab-section').forEach(s => {
-          s.style.display = 'none';
-        });
-        document.querySelectorAll('.nav-item').forEach(n => {
-          n.classList.remove('text-primary-600', 'font-semibold');
-          n.classList.add('text-gray-600');
-        });
-        const target = document.getElementById(id);
-        if (target) target.style.display = 'block';
-        const activeNav = document.querySelector(`.nav-item[data-section="${id}"]`);
-        if (activeNav) {
-          activeNav.classList.add('text-primary-600', 'font-semibold');
-          activeNav.classList.remove('text-gray-600');
-        }
-      }
+<script>
+  window.showSection = function(id) {
+    document.querySelectorAll('.tab-section').forEach(s => {
+      s.style.display = 'none';
+    });
+    document.querySelectorAll('.nav-item').forEach(n => {
+      n.classList.remove('text-primary-600', 'font-semibold');
+      n.classList.add('text-gray-600');
+    });
+    const target = document.getElementById(id);
+    if (target) target.style.display = 'block';
+    const activeNav = document.querySelector(`.nav-item[data-section="${id}"]`);
+    if (activeNav) {
+      activeNav.classList.add('text-primary-600', 'font-semibold');
+      activeNav.classList.remove('text-gray-600');
+    }
+  }
 
-      document.addEventListener('DOMContentLoaded', () => {
-        // Hide all sections first
-        document.querySelectorAll('.tab-section').forEach(s => {
-          s.style.display = 'none';
-        });
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.tab-section').forEach(s => {
+      s.style.display = 'none';
+    });
 
-        // Show about by default
-        const about = document.getElementById('about');
-        if (about) about.style.display = 'block';
+    const about = document.getElementById('about');
+    if (about) about.style.display = 'block';
 
-        // Nav click handlers
-        document.querySelectorAll('.nav-item').forEach(item => {
-          item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const section = item.getAttribute('data-section');
-            if (section) showSection(section);
-          });
-        });
-
-        // Mobile menu toggle
-        document.getElementById('menu-toggle')?.addEventListener('click', () => {
-          document.getElementById('mobile-menu')?.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-          });
-        });
-
-        // Animate elements
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-          el.classList.add('animate-fade-in');
-        });
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = item.getAttribute('data-section');
+        if (section) window.showSection(section);
       });
-    </script>
+    });
+
+    document.getElementById('menu-toggle')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.add('hidden');
+      });
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.classList.add('animate-fade-in');
+    });
+  });
+</script>
   </body>
 </html>
